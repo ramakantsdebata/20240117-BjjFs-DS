@@ -1,6 +1,19 @@
 # A matrix - Sparsely populated
-matrix = [
+matrix1 = [
     [0, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 2, 0, 7],
+    [0, 0, 0, 5]
+]
+
+matrix2 = [
+    [0, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 2, 0, 7],
+    [0, 0, 0, 5]
+]
+
+matrix3 = [
     [0, 1, 0, 0],
     [0, 2, 0, 7],
     [0, 0, 0, 5]
@@ -33,8 +46,18 @@ def print_sparse_matrix(sparseMatrix):
     for row in sparseMatrix:
         print(row)
 
+def sparseAdd(sp1, sp2):
+    pass
+
 def main():
-    spMtrx = convert_to_sparse(matrix)
-    print_sparse_matrix(spMtrx)
+    spMtrx1 = convert_to_sparse(matrix1)
+    spMtrx2 = convert_to_sparse(matrix2)
+    # print_sparse_matrix(spMtrx)
+
+    res = sparseAdd(spMtrx1, spMtrx2)
+    print_sparse_matrix(res)
+
+    res = sparseAdd(spMtrx1, spMtrx3)
+    print_sparse_matrix(res)
 
 main()
