@@ -37,6 +37,8 @@ def convert_to_sparse(matrix):
                 sparseMatrix[0][2] += 1
                 sparseMatrix.append(lst)  
 
+    return sparseMatrix
+
 def print_sparse_matrix(sparseMatrix):
     for row in sparseMatrix:
         print(row)
@@ -44,7 +46,12 @@ def print_sparse_matrix(sparseMatrix):
 def sparseAdd(sp1, sp2):
     pass
 
-def main():
+def Test1():
+    spMtrx1 = convert_to_sparse(matrix1)
+    print_sparse_matrix(spMtrx1)
+
+
+def Test2():
     spMtrx1 = convert_to_sparse(matrix1)
     spMtrx2 = convert_to_sparse(matrix2)
     # print_sparse_matrix(spMtrx)
@@ -54,5 +61,8 @@ def main():
 
     res = sparseAdd(spMtrx1, spMtrx3)
     print_sparse_matrix(res)
+
+def main():
+    Test1()
 
 main()
