@@ -27,11 +27,6 @@ def convert_to_sparse(matrix):
     sparseMatrix = []
     sparseMatrix.append(meta)
 
-
-    # rows.append(num_rows)
-    # cols.append(num_cols)
-    # values.append(0)
-
     for i in range(num_rows):
         for j in range(num_cols):
             if matrix[i][j] != 0:
