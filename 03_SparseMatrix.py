@@ -6,25 +6,35 @@ matrix = [
     [0, 0, 0, 5]
 ]
 
-num_rows = len(matrix)
-num_cols = len(matrix[0])
+def convert_to_sparse(matrix):
+    num_rows = len(matrix)
+    num_cols = len(matrix[0])
 
-rows = []
-cols = []
-values = []
+    meta = [num_rows, num_cols, 0]
+    sparseMatrix = []
+    sparseMatrix.append(meta)
 
-rows.append(num_rows)
-cols.append(num_cols)
-values.append(0)
 
-for i in range(num_rows):
-    for j in range(num_cols):
-        if matrix[i][j] != 0:
-            rows.append(i)
-            cols.append(j)
-            values.append(matrix[i][j])
-            values[0] += 1
+    # rows.append(num_rows)
+    # cols.append(num_cols)
+    # values.append(0)
 
-print(rows)
-print(cols)
-print(values)
+    for i in range(num_rows):
+        for j in range(num_cols):
+            if matrix[i][j] != 0:
+                lst = []
+                lst.append(i)
+                lst.append(j)
+                lst.append(matrix[i][j])
+                sparseMatrix[0][2] += 1
+                sparseMatrix.append(lst)  
+
+def print_sparse_matrix(sparseMatrix):
+    for row in sparseMatrix:
+        print(row)
+
+def main():
+    spMtrx = convert_to_sparse(matrix)
+    print_sparse_matrix(spMtrx)
+
+main()
